@@ -133,7 +133,7 @@ class ActionCacheListener {
                 'Content' => $Event->getResponse()->getContent(),
                 'Controller' => $Event->getRequest()->get('_controller'),
             );
-            $this->Tagcache->set($TagcacheConfig['key'], $CacheContent, $CacheContent['Tags'], $TagcacheConfig['expires']);
+            $this->Tagcache->set($CacheContent['Key'], $CacheContent, $CacheContent['Tags'], $CacheContent['Expires']);
             $Event->getResponse()->setContent($this->renderCacheContent($CacheContent, false));
         }
     }
